@@ -2,7 +2,7 @@
  * ShopEasy Checkout Controller
  * Integrates Paystack Inline Payments & Cash on Delivery
  */
-const PAYSTACK_PUBLIC_KEY = "pk_test_PASTE_YOUR_TEST_KEY_HERE";
+const PAYSTACK_PUBLIC_KEY = "pk_testpk_test_e0cb66970b9c6448b4c58aad4114a8fe47ee4226";
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Route Guards
