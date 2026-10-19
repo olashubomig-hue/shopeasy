@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy — Customer Profile &amp; Orders</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="View your order history, manage account credentials, track delivery dispatches, and sign out securely.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Confetti Canvas for Order Celebrations -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Shared Minimalist Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="ShopEasy Home">
+        <span class="logo-mark">SE</span>
+        <span>Shop<em>Easy</em></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span id="wishlist-count" class="nav-badge">0</span></a>
+        <a href="cart.html" class="nav-link nav-cart-trigger">Cart <span id="cart-count" class="nav-badge">0</span></a>
+        <a href="profile.html" class="nav-link active">Profile</a>
+        <a href="login.html" class="nav-link auth-nav-link" id="auth-link">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="nav-icon-btn nav-search-btn" aria-label="Search store (Press /)" title="Search (Press /)">
+          🔍
+        </button>
+        <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle theme">
+          🌙
+        </button>
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main-content" style="padding-top: 40px; padding-bottom: 80px;">
+    <!-- Order Celebration Success Banner -->
+    <div id="success-banner" style="display: none; background: var(--sand); border: 2px solid var(--primary); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 36px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 18px;">
+        <span style="font-size: 38px;">🎉</span>
+        <div>
+          <h2 style="font-size: 1.6rem; color: var(--text); margin-bottom: 4px;">Thank You for Your Order!</h2>
+          <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">
+            Your order has been recorded successfully. A receipt has been dispatched to your email.
+          </p>
+        </div>
+      </div>
+      <a href="shop.html" class="btn btn-sage">Continue Shopping &rarr;</a>
+    </div>
+
+    <!-- Profile Header Card -->
+    <div class="checkout-panel" style="margin-bottom: 36px; padding: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div id="user-avatar" style="width: 64px; height: 64px; border-radius: 50%; background: var(--primary); color: #fffdf5; font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; justify-content: center;">
+          U
+        </div>
+        <div>
+          <h1 id="user-name" style="font-size: 1.8rem; margin-bottom: 4px;">Customer Profile</h1>
+          <p id="user-email" style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">customer@example.ng</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <button type="button" class="btn btn-outline" id="logout-btn">Log Out 🚪</button>
+      </div>
+    </div>
+
+    <!-- Orders Section -->
+    <div>
+      <h2 style="font-size: 1.6rem; margin-bottom: 20px;">Your Order History</h2>
+      <div id="orders-box">
+        <!-- Rendered dynamically by js/profile.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">SE</span>
+            <span>Shop<em>Easy</em></span>
+          </a>
+          <p>Crafting intentional online shopping experiences across Nigeria. Premium electronics, tailored fashion, and serene home spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=Electronics">Electronics</a></li>
+            <li><a href="shop.html?cat=Fashion">Fashion &amp; Apparel</a></li>
+            <li><a href="shop.html?cat=Home">Home &amp; Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="profile.html">Order History</a></li>
+            <li><a href="login.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="shop.html">Delivery Information</a></li>
+            <li><a href="shop.html">Returns &amp; Exchanges</a></li>
+            <li><a href="checkout.html">Paystack Payment Info</a></li>
+            <li><a href="mailto:support@shopeasy.ng">support@shopeasy.ng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEasy Inc. All rights reserved. Plain HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        <p>Built for mindful, effortless shopping.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ORDER (Strictly: data.js, storage.js, auth.js, cart.js, wishlist.js, ui.js, then profile.js) -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

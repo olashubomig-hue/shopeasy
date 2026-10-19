@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy — Product Details</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="View verified item specs, high resolution photography, customer reviews, and order with fast doorstep shipping across Nigeria.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Minimalist Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="ShopEasy Home">
+        <span class="logo-mark">SE</span>
+        <span>Shop<em>Easy</em></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span id="wishlist-count" class="nav-badge">0</span></a>
+        <a href="cart.html" class="nav-link nav-cart-trigger">Cart <span id="cart-count" class="nav-badge">0</span></a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="login.html" class="nav-link auth-nav-link" id="auth-link">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="nav-icon-btn nav-search-btn" aria-label="Search store (Press /)" title="Search (Press /)">
+          🔍
+        </button>
+        <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle theme">
+          🌙
+        </button>
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container product-page-section" id="main-content">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="margin-bottom: 24px;">
+      <p style="font-size: 0.88rem; color: var(--text-muted);">
+        <a href="index.html" style="text-decoration: underline;">Home</a> /
+        <a href="shop.html" style="text-decoration: underline;">Shop</a> /
+        <span id="breadcrumb-title" style="color: var(--text); font-weight: 600;">Product</span>
+      </p>
+    </nav>
+
+    <!-- Main Product Container (rendered by js/product.js) -->
+    <div id="product-detail">
+      <!-- Details populated dynamically -->
+    </div>
+
+    <!-- Related Products: "You May Also Like" -->
+    <section class="related-section" id="related-section" style="margin-top: 60px;">
+      <h2 class="section-title reveal" style="font-size: 2rem;">You May Also Like</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 30px;">Complementary designs sharing the same attention to craft.</p>
+      <div class="product-grid" id="related-grid"></div>
+    </section>
+
+    <!-- Recently Viewed Strip -->
+    <section class="recently-viewed-section" id="recent-section" style="margin-top: 60px;">
+      <h2 class="section-title reveal" style="font-size: 2rem;">Recently Viewed</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 30px;">Items you explored during this visit.</p>
+      <div class="product-grid" id="recently-viewed-grid"></div>
+    </section>
+  </main>
+
+  <!-- Sticky Mini Add-to-Cart Bar (Appears when main action button scrolls out of view) -->
+  <div class="sticky-add-bar" id="sticky-bar" aria-hidden="true">
+    <div class="container sticky-bar-container">
+      <div class="sticky-bar-info">
+        <img id="sticky-img" src="" alt="">
+        <div>
+          <h4 id="sticky-title" class="sticky-bar-title"></h4>
+          <span id="sticky-price" style="font-weight: 700; color: var(--primary);"></span>
+        </div>
+      </div>
+      <div class="sticky-bar-actions">
+        <button type="button" class="btn btn-primary" id="sticky-add-btn">Add to Cart 🛒</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">SE</span>
+            <span>Shop<em>Easy</em></span>
+          </a>
+          <p>Crafting intentional online shopping experiences across Nigeria. Premium electronics, tailored fashion, and serene home spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=Electronics">Electronics</a></li>
+            <li><a href="shop.html?cat=Fashion">Fashion &amp; Apparel</a></li>
+            <li><a href="shop.html?cat=Home">Home &amp; Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="profile.html">Order History</a></li>
+            <li><a href="login.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="shop.html">Delivery Information</a></li>
+            <li><a href="shop.html">Returns &amp; Exchanges</a></li>
+            <li><a href="checkout.html">Paystack Payment Info</a></li>
+            <li><a href="mailto:support@shopeasy.ng">support@shopeasy.ng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEasy Inc. All rights reserved. Plain HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        <p>Built for mindful, effortless shopping.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ORDER (Strictly: data.js, storage.js, auth.js, cart.js, wishlist.js, ui.js, then product.js) -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

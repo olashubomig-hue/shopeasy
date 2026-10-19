@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy — Crafted Essentials &amp; Mindful Living</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="A curated destination for electronics, tailored fashion, and artisanal home decor. Fast delivery across Nigeria and secure payments.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Preloader (First visit per session only) -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo">Shop<span>Easy</span></div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <div class="preloader-meta">
+        <span id="preloader-count">0%</span>
+        <button type="button" class="preloader-skip" id="preloader-skip">Skip &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Minimalist Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="ShopEasy Home">
+        <span class="logo-mark">SE</span>
+        <span>Shop<em>Easy</em></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span id="wishlist-count" class="nav-badge">0</span></a>
+        <a href="cart.html" class="nav-link nav-cart-trigger">Cart <span id="cart-count" class="nav-badge">0</span></a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="login.html" class="nav-link auth-nav-link" id="auth-link">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="nav-icon-btn nav-search-btn" aria-label="Search store (Press /)" title="Search (Press /)">
+          🔍
+        </button>
+        <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle theme">
+          🌙
+        </button>
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- 3D Interactive Hero Section -->
+    <section class="hero-section" aria-label="Hero Introduction">
+      <!-- 3D Canvas Background -->
+      <div class="hero-canvas-wrap" id="hero-canvas-wrap">
+        <div class="hero-fallback-gradient"></div>
+        <canvas id="hero-canvas"></canvas>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <span class="dot"></span> Curated Autumn Collection 2026
+          </div>
+          <h1 class="hero-title reveal">
+            Crafted for mindful living.<br><em>Curated for you.</em>
+          </h1>
+          <p class="hero-subtitle reveal">
+            Discover precision audio, tailored apparel, and architectural home accents designed to bring calm and tactile joy to your everyday life.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="shop.html" class="btn btn-primary">Shop Now &rarr;</a>
+            <a href="#categories" class="btn btn-outline">Browse Categories</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Strip of Words -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">New Season Arrivals</span>
+        <span class="marquee-item">Free Delivery Over ₦50,000</span>
+        <span class="marquee-item">Secure Paystack Payments</span>
+        <span class="marquee-item">Conscious Modern Design</span>
+        <span class="marquee-item">Easy 7-Day Returns</span>
+        <span class="marquee-item">100% Authentic Quality Pledge</span>
+        <span class="marquee-item">Doorstep Shipping Nationwide</span>
+        <span class="marquee-item">New Season Arrivals</span>
+        <span class="marquee-item">Free Delivery Over ₦50,000</span>
+        <span class="marquee-item">Secure Paystack Payments</span>
+        <span class="marquee-item">Conscious Modern Design</span>
+        <span class="marquee-item">Easy 7-Day Returns</span>
+        <span class="marquee-item">100% Authentic Quality Pledge</span>
+        <span class="marquee-item">Doorstep Shipping Nationwide</span>
+      </div>
+    </div>
+
+    <!-- Category Showcase Tiles -->
+    <section class="category-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title reveal">Shop by Department</h2>
+            <p class="section-subtitle reveal">Explore our three foundational collections shaped for modern taste.</p>
+          </div>
+          <a href="shop.html" class="btn btn-outline reveal">View Entire Catalog &rarr;</a>
+        </div>
+
+        <div class="cat-grid">
+          <!-- Electronics -->
+          <a href="shop.html?cat=Electronics" class="cat-tile reveal" aria-label="Shop Electronics">
+            <img src="images/cat-electronics.jpg" alt="Curated electronics and audio gadgets" loading="lazy">
+            <div class="cat-tile-overlay">
+              <span class="cat-tile-badge">Collection 01</span>
+              <h3 class="cat-tile-name">Electronics &amp; Sound</h3>
+              <span class="cat-tile-link">Explore 5+ Pieces &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Fashion -->
+          <a href="shop.html?cat=Fashion" class="cat-tile reveal" aria-label="Shop Fashion">
+            <img src="images/cat-fashion.jpg" alt="Tailored apparel and everyday carry" loading="lazy">
+            <div class="cat-tile-overlay">
+              <span class="cat-tile-badge">Collection 02</span>
+              <h3 class="cat-tile-name">Fashion &amp; Apparel</h3>
+              <span class="cat-tile-link">Explore 5+ Styles &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Home -->
+          <a href="shop.html?cat=Home" class="cat-tile reveal" aria-label="Shop Home Decor">
+            <img src="images/cat-home.jpg" alt="Artisanal ceramics and interior lighting" loading="lazy">
+            <div class="cat-tile-overlay">
+              <span class="cat-tile-badge">Collection 03</span>
+              <h3 class="cat-tile-name">Home &amp; Living</h3>
+              <span class="cat-tile-link">Explore 4+ Accents &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured / All Products Section (Jesper-Style Toggle) -->
+    <section class="products-section">
+      <div class="container">
+        <div class="view-toggle-bar">
+          <div>
+            <h2 class="section-title reveal">Featured Selections</h2>
+            <p class="section-subtitle reveal">Hand-picked innovations and wardrobe essentials for this week.</p>
+          </div>
+          <!-- Jesper-Style Toggle -->
+          <div class="view-toggle-group reveal">
+            <button type="button" class="toggle-tab-btn active" id="toggle-featured">Featured (4)</button>
+            <button type="button" class="toggle-tab-btn" id="toggle-all">All (Full List)</button>
+          </div>
+        </div>
+
+        <!-- Populated dynamically by js/home.js -->
+        <div class="product-grid featured-mode" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- Animated Stats Strip -->
+    <section class="stats-strip" aria-label="Store Statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="50000" data-suffix="+">0</span>
+            <span class="stat-label">Happy Shoppers Nationwide</span>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="1400" data-suffix="+">0</span>
+            <span class="stat-label">Consciously Curated Items</span>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="36" data-suffix=" States">0</span>
+            <span class="stat-label">Delivered Across Nigeria</span>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="4.9" data-suffix="/5.0">0</span>
+            <span class="stat-label">Average Customer Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Image Banner Slider -->
+    <section class="promo-slider-section">
+      <div class="container">
+        <div class="promo-slider" id="promo-slider" aria-label="Promotions and Seasonal Drops">
+          <!-- Slide 1 -->
+          <div class="promo-slide active">
+            <img src="images/hero1.jpg" alt="High performance acoustic devices" class="promo-slide-img" loading="lazy">
+            <div class="promo-overlay"></div>
+            <div class="promo-content">
+              <span class="promo-pill">Featured Drop</span>
+              <h3 class="promo-title">Pure Sound Architecture</h3>
+              <p class="promo-desc">Immerse yourself in active noise cancellation engineered for stillness and deep focus.</p>
+              <a href="shop.html?cat=Electronics" class="btn btn-sage">Explore Sound Collection &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="promo-slide">
+            <img src="images/hero2.jpg" alt="Tailored casual urban wardrobe" class="promo-slide-img" loading="lazy">
+            <div class="promo-overlay"></div>
+            <div class="promo-content">
+              <span class="promo-pill">Trending Now</span>
+              <h3 class="promo-title">Tactile Urban Streetwear</h3>
+              <p class="promo-desc">Breathable knits, full-grain Italian leathers, and weather-resistant canvas carry.</p>
+              <a href="shop.html?cat=Fashion" class="btn btn-sage">Explore Wardrobe &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="promo-slide">
+            <img src="images/hero3.jpg" alt="Artisan stoneware ceramics and warm interior lighting" class="promo-slide-img" loading="lazy">
+            <div class="promo-overlay"></div>
+            <div class="promo-content">
+              <span class="promo-pill">Sanctuary</span>
+              <h3 class="promo-title">Artisanal Living Spaces</h3>
+              <p class="promo-desc">Handcrafted ceramic sets and circadian illumination designed to transform your rooms.</p>
+              <a href="shop.html?cat=Home" class="btn btn-sage">Discover Home Decor &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <button type="button" class="slider-arrow prev" id="promo-prev" aria-label="Previous promotion">&#10094;</button>
+          <button type="button" class="slider-arrow next" id="promo-next" aria-label="Next promotion">&#10095;</button>
+          <div class="slider-dots" id="promo-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Shop With Us Feature Cards -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-box reveal">
+            <div class="feature-icon">🚚</div>
+            <h4>Swift Doorstep Shipping</h4>
+            <p>Reliable tracked courier dispatch to Lagos, Abuja, Port Harcourt, and all 36 Nigerian states.</p>
+          </div>
+
+          <div class="feature-box reveal">
+            <div class="feature-icon">🔒</div>
+            <h4>Secure Paystack Checkout</h4>
+            <p>Encrypted bank cards, USSD, and instant bank transfers safeguarded by PCI-DSS security.</p>
+          </div>
+
+          <div class="feature-box reveal">
+            <div class="feature-icon">✨</div>
+            <h4>Guaranteed Authenticity</h4>
+            <p>Every single piece is verified genuine, brand-new, and covered by our full warranty protection.</p>
+          </div>
+
+          <div class="feature-box reveal">
+            <div class="feature-icon">↩️</div>
+            <h4>7-Day Peaceful Returns</h4>
+            <p>Not entirely in love with your choice? Return within 7 days for a seamless, prompt exchange.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Card -->
+    <section class="container">
+      <div class="newsletter-card reveal">
+        <h2>Join the ShopEasy Circle</h2>
+        <p>Subscribe for quiet announcements, private seasonal flash sales, and early access to artisan drops.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address..." required aria-label="Email address for newsletter">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">SE</span>
+            <span>Shop<em>Easy</em></span>
+          </a>
+          <p>Crafting intentional online shopping experiences across Nigeria. Premium electronics, tailored fashion, and serene home spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=Electronics">Electronics</a></li>
+            <li><a href="shop.html?cat=Fashion">Fashion &amp; Apparel</a></li>
+            <li><a href="shop.html?cat=Home">Home &amp; Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="profile.html">Order History</a></li>
+            <li><a href="login.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="shop.html">Delivery Information</a></li>
+            <li><a href="shop.html">Returns &amp; Exchanges</a></li>
+            <li><a href="checkout.html">Paystack Payment Info</a></li>
+            <li><a href="mailto:support@shopeasy.ng">support@shopeasy.ng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEasy Inc. All rights reserved. Crafted with vanilla HTML, CSS &amp; JavaScript.</p>
+        <p>Designed for mindful, effortless shopping.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ORDER (Strictly: Three.js, data.js, storage.js, auth.js, cart.js, wishlist.js, ui.js, three-scene.js, home.js) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

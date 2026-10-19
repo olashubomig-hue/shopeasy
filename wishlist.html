@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy — Saved Wishlist</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="View and manage your saved items, move your favorites directly into your shopping cart, and track stock.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Minimalist Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="ShopEasy Home">
+        <span class="logo-mark">SE</span>
+        <span>Shop<em>Easy</em></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="wishlist.html" class="nav-link active">Wishlist <span id="wishlist-count" class="nav-badge">0</span></a>
+        <a href="cart.html" class="nav-link nav-cart-trigger">Cart <span id="cart-count" class="nav-badge">0</span></a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="login.html" class="nav-link auth-nav-link" id="auth-link">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="nav-icon-btn nav-search-btn" aria-label="Search store (Press /)" title="Search (Press /)">
+          🔍
+        </button>
+        <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle theme">
+          🌙
+        </button>
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main-content" style="padding-top: 40px; padding-bottom: 80px;">
+    <div style="margin-bottom: 30px;">
+      <h1 class="section-title">Saved Wishlist</h1>
+      <p class="section-subtitle">Keep track of your most anticipated pieces and move them to cart with one tap.</p>
+    </div>
+
+    <!-- Wishlist Container -->
+    <div id="wishlist-box">
+      <!-- Populated dynamically by js/wishlist.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">SE</span>
+            <span>Shop<em>Easy</em></span>
+          </a>
+          <p>Crafting intentional online shopping experiences across Nigeria. Premium electronics, tailored fashion, and serene home spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=Electronics">Electronics</a></li>
+            <li><a href="shop.html?cat=Fashion">Fashion &amp; Apparel</a></li>
+            <li><a href="shop.html?cat=Home">Home &amp; Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="profile.html">Order History</a></li>
+            <li><a href="login.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="shop.html">Delivery Information</a></li>
+            <li><a href="shop.html">Returns &amp; Exchanges</a></li>
+            <li><a href="checkout.html">Paystack Payment Info</a></li>
+            <li><a href="mailto:support@shopeasy.ng">support@shopeasy.ng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEasy Inc. All rights reserved. Plain HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        <p>Built for mindful, effortless shopping.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ORDER (Strictly: data.js, storage.js, auth.js, cart.js, wishlist.js, ui.js) -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

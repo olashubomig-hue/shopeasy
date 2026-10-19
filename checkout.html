@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy — Secure Checkout</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Complete your purchase with secure Paystack payments or Cash on Delivery. Tracked nationwide shipping.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Minimalist Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="ShopEasy Home">
+        <span class="logo-mark">SE</span>
+        <span>Shop<em>Easy</em></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span id="wishlist-count" class="nav-badge">0</span></a>
+        <a href="cart.html" class="nav-link nav-cart-trigger">Cart <span id="cart-count" class="nav-badge">0</span></a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="login.html" class="nav-link auth-nav-link" id="auth-link">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="nav-icon-btn nav-search-btn" aria-label="Search store (Press /)" title="Search (Press /)">
+          🔍
+        </button>
+        <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle theme">
+          🌙
+        </button>
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main-content" style="padding-top: 40px; padding-bottom: 80px;">
+    <div style="margin-bottom: 30px;">
+      <h1 class="section-title">Secure Checkout</h1>
+      <p class="section-subtitle">Enter your shipping details and select your preferred payment method.</p>
+    </div>
+
+    <div class="checkout-grid">
+      <!-- Checkout Form Column -->
+      <div class="checkout-panel">
+        <h2 style="font-size: 1.4rem; margin-bottom: 22px;">1. Delivery Address</h2>
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Recipient Name</label>
+            <input type="text" id="name" class="form-input" placeholder="e.g. Tunde Balogun" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address (for order receipts &amp; Paystack)</label>
+            <input type="email" id="email" class="form-input" placeholder="e.g. tunde@example.ng" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number (for courier contact)</label>
+            <input type="tel" id="phone" class="form-input" placeholder="e.g. 08012345678" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address" class="form-label">Delivery Street Address &amp; State</label>
+            <textarea id="address" class="form-input" rows="3" placeholder="e.g. 15 Admiralty Way, Lekki Phase 1, Lagos" required style="resize: vertical;"></textarea>
+          </div>
+
+          <h2 style="font-size: 1.4rem; margin-top: 36px; margin-bottom: 16px;">2. Payment Method</h2>
+          
+          <div class="payment-options-grid">
+            <label class="payment-radio-box" id="label-paystack">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="radio" name="pay" value="paystack" id="pay-paystack" checked>
+                <strong>Pay Online with Paystack</strong>
+              </div>
+              <span style="font-size: 0.82rem; color: var(--text-muted); margin-left: 24px;">Debit card, Apple Pay, Bank Transfer, USSD</span>
+            </label>
+
+            <label class="payment-radio-box" id="label-cod">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="radio" name="pay" value="cod" id="pay-cod">
+                <strong>Pay on Delivery</strong>
+              </div>
+              <span style="font-size: 0.82rem; color: var(--text-muted); margin-left: 24px;">Cash or POS transfer upon doorstep handover</span>
+            </label>
+          </div>
+
+          <div id="pay-msg" style="display: none; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.9rem; margin: 18px 0;"></div>
+
+          <div style="margin-top: 28px;">
+            <button type="submit" class="btn btn-primary btn-full" id="place-btn" style="font-size: 1.05rem; padding: 16px;">
+              Place Order &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Order Summary Column -->
+      <div class="checkout-panel" style="height: fit-content;">
+        <h2 style="font-size: 1.4rem; margin-bottom: 20px;">Order Summary</h2>
+        <div id="summary">
+          <!-- Dynamic summary lines rendered by js/checkout.js -->
+        </div>
+
+        <div style="margin-top: 24px; border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
+          <p>🛡️ PCI-DSS Level 1 certified payment processing.</p>
+          <p>📦 Tracked delivery with instant confirmation email.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">SE</span>
+            <span>Shop<em>Easy</em></span>
+          </a>
+          <p>Crafting intentional online shopping experiences across Nigeria. Premium electronics, tailored fashion, and serene home spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=Electronics">Electronics</a></li>
+            <li><a href="shop.html?cat=Fashion">Fashion &amp; Apparel</a></li>
+            <li><a href="shop.html?cat=Home">Home &amp; Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="profile.html">Order History</a></li>
+            <li><a href="login.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="shop.html">Delivery Information</a></li>
+            <li><a href="shop.html">Returns &amp; Exchanges</a></li>
+            <li><a href="checkout.html">Paystack Payment Info</a></li>
+            <li><a href="mailto:support@shopeasy.ng">support@shopeasy.ng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEasy Inc. All rights reserved. Plain HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        <p>Built for mindful, effortless shopping.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PAYSTACK INLINE SCRIPT (Loaded ONLY on checkout.html) -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <!-- SCRIPT ORDER (Strictly: data.js, storage.js, auth.js, cart.js, wishlist.js, ui.js, then checkout.js) -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

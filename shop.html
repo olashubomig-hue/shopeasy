@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy — Shop Catalog</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Explore our catalog of premium electronics, tailored fashion, and artisanal home accents with live search, filters, and fast delivery.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Minimalist Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="ShopEasy Home">
+        <span class="logo-mark">SE</span>
+        <span>Shop<em>Easy</em></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <a href="wishlist.html" class="nav-link">Wishlist <span id="wishlist-count" class="nav-badge">0</span></a>
+        <a href="cart.html" class="nav-link nav-cart-trigger">Cart <span id="cart-count" class="nav-badge">0</span></a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="login.html" class="nav-link auth-nav-link" id="auth-link">Login</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="nav-icon-btn nav-search-btn" aria-label="Search store (Press /)" title="Search (Press /)">
+          🔍
+        </button>
+        <button type="button" class="nav-icon-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle theme">
+          🌙
+        </button>
+        <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main-content" style="padding-top: 40px; padding-bottom: 80px;">
+    <div style="margin-bottom: 30px;">
+      <h1 class="section-title">The Collection</h1>
+      <p class="section-subtitle">Tactile design, verified durability, and fast doorstep delivery across Nigeria.</p>
+    </div>
+
+    <!-- Shop Controls & Filters Bar -->
+    <div class="shop-controls-bar">
+      <!-- Category Chips -->
+      <div class="filter-chips-row" id="category-chips">
+        <button type="button" class="chip-btn active" data-cat="all">All Departments</button>
+        <button type="button" class="chip-btn" data-cat="Electronics">Electronics</button>
+        <button type="button" class="chip-btn" data-cat="Fashion">Fashion</button>
+        <button type="button" class="chip-btn" data-cat="Home">Home &amp; Living</button>
+      </div>
+
+      <!-- Filters Grid -->
+      <div class="filters-grid">
+        <div>
+          <label for="shop-search" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Search Catalog</label>
+          <input type="text" id="shop-search" class="filter-input" placeholder="Search by name, specs, or keyword...">
+        </div>
+
+        <div class="price-slider-wrap">
+          <div class="price-slider-label">
+            <span>Price Ceiling:</span>
+            <strong id="price-val" style="color: var(--primary);">₦62,000</strong>
+          </div>
+          <input type="range" id="price-slider" class="range-slider" min="5000" max="62000" step="1000" value="62000">
+        </div>
+
+        <div>
+          <label for="sort-select" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Sort By</label>
+          <select id="sort-select" class="filter-input">
+            <option value="featured">Featured Picks</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+
+        <!-- Grid vs List View Toggle -->
+        <div>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Layout</span>
+          <div class="view-toggle-group">
+            <button type="button" class="toggle-tab-btn active" id="view-grid-btn" title="Grid View" aria-label="Grid View">Grid ⊞</button>
+            <button type="button" class="toggle-tab-btn" id="view-list-btn" title="List View" aria-label="List View">List ☰</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Status Row -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <p id="shop-count" style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">Loading catalog...</p>
+    </div>
+
+    <!-- Products Output Container -->
+    <div id="shop-container" class="product-grid">
+      <!-- Cards or List rows populated dynamically by js/shop.js -->
+    </div>
+
+    <!-- Floating Cursor Thumbnail for List View (Desktop) -->
+    <div id="floating-thumb" class="floating-cursor-thumb" aria-hidden="true">
+      <img id="floating-thumb-img" src="" alt="">
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">SE</span>
+            <span>Shop<em>Easy</em></span>
+          </a>
+          <p>Crafting intentional online shopping experiences across Nigeria. Premium electronics, tailored fashion, and serene home spaces.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=Electronics">Electronics</a></li>
+            <li><a href="shop.html?cat=Fashion">Fashion &amp; Apparel</a></li>
+            <li><a href="shop.html?cat=Home">Home &amp; Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+            <li><a href="profile.html">Order History</a></li>
+            <li><a href="login.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="shop.html">Delivery Information</a></li>
+            <li><a href="shop.html">Returns &amp; Exchanges</a></li>
+            <li><a href="checkout.html">Paystack Payment Info</a></li>
+            <li><a href="mailto:support@shopeasy.ng">support@shopeasy.ng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEasy Inc. All rights reserved. Plain HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        <p>Built for mindful, effortless shopping.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ORDER (Strictly: data.js, storage.js, auth.js, cart.js, wishlist.js, ui.js, then shop.js) -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
